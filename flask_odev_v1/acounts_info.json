@@ -1,1 +1,12 @@
-{"members": [{"email": "dsa", "username": "sa", "pasword": "passs"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "yilmaz076", "email": "yilmaaz076@gmail.com", "password": "123"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "yilmaz076", "email": "yilmaaz076@gmail.com", "password": "123"}, {"username": "yilmaz076", "email": "yilmaaz076@gmail.com", "password": "123456"}, {"username": "dsa", "email": "dsa", "password": "fsa"}, {"username": "hakan", "email": "yilmaaz076@gmail.com", "password": "asd"}, {"username": "dsa", "email": "dsa", "password": "fsa"}]}
+{
+  "members": [
+    {
+      "username": "yilmaz076",
+      "email": "email@gmail.com",
+      "password": "123456"
+    },
+    { "username": "hakan", "email": "email@gmail.com", "password": "123" },
+    { "username": "yilmaz", "email": "email@gmail.com", "password": "123456" },
+    { "username": "admin", "email": "admin@gmail.com", "password": "admin" }
+  ]
+}
