@@ -1,0 +1,13 @@
+
+.about{
+    margin-top: 2%;
+    height: 700px;
+}
+.contact-image {
+    height:170px;
+    width:100%;
+    background-size:cover;
+  }
+.addMargin{
+    margin-top: 10px;
+}

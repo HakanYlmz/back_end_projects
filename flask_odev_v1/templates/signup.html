@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/loginStyle.css')}}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Create Account</h2>
+  <form id="login-form" action="{{url_for('signup')}}" method="POST" oninput='passwordValid.setCustomValidity(passwordValid.value != password.value ? "Passwords do not match." : "")'>
+    <p>
+    <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+
+    <p>
+    <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
+    </p>
+
+    <p>
+        <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+    </p>
+
+    <p>
+        <input type="password" id="passwordValid" name="passwordValid" placeholder="Confirm password" required><i class="validation"><span></span><span></span></i>
+    </p>
+
+    <p>
+    <input type="submit" id="signup" value="signup">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p><a href="{{url_for('login')}}">Login</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+  
+</body>
+</html>
