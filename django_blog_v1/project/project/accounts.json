@@ -1,13 +1,18 @@
 {
     "members": [
         {
-            "username" : "Hakan",
+            "username" : "admin",
             "email" : "admin@gmail.com",
             "password" : "123456"
         },
         {
-            "username" : "Hakan",
-            "email" : "yilmaaz076@gmail.com",
+            "username" : "member",
+            "email" : "member@gmail.com",
+            "password" : "123456"
+        },
+        {
+            "username" : "quest",
+            "email" : "quest@gmail.com",
             "password" : "123456"
         }
     ] 

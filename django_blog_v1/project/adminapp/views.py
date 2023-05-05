@@ -59,7 +59,7 @@ def sendBlog(request):
 
 
 def saveBlogData(blogData):
-    with open("project/denemeJsonfile.json", "r+") as file:
+    with open("project/blogsDataset.json", "r+") as file:
         json_data = json.load(file)
         json_data["blogData"].append(blogData)
         file.seek(0)

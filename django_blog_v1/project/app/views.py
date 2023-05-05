@@ -9,7 +9,7 @@ posts = {
     'Statu' : "Quest"
 }
 def getBlogData():
-    with open("project/denemeJsonfile.json", "r+") as file:
+    with open("project/blogsDataset.json", "r+") as file:
         json_data = json.load(file)
         for  i in json_data['blogData']:
             posts['data'].append(i)
