@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{% load static %}
+<!-- Main Content-->
+{% block bodycontent %}
+<main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+       
+        <div class="my-5">
+        
+          <form id="contactForm" action="login" method="POST">
+            {% csrf_token %}
+           
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email..."
+                data-sb-validations="required,email"
+              />
+              <label for="email">Email address</label>
+              <div class="invalid-feedback" data-sb-feedback="email:required">
+                An email is required.
+              </div>
+              <div class="invalid-feedback " data-sb-feedback="email:email">
+                Email is not valid.
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="name"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                data-sb-validations="required"
+              />
+              <label for="name">Password</label>
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                A password is required.
+              </div>
+            </div>
+           
+          
+            <!-- Submit Button-->
+            <button
+            
+              class="btn btn-primary text-uppercase  mb-3"
+              id="submitButton"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

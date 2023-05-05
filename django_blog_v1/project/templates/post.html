@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% block bodycontent %}
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+
+                        baştakid
+                        {% for key,value in post.items %}
+                        
+                        {% if key == 'title' %}
+                        <h2 class="section-heading">{{value}} section</h2>
+                        {%endif%}
+                        {%if key == 'subtitle' %}
+                        <p>{{value}}</p>
+                        {%endif%}
+                        {%if key == 'textArea' %}}
+                        <p>{{value}}</p>
+                        {%endif%}
+                        {% endfor %}
+
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endblock  %}

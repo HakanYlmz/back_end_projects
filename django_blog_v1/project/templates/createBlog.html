@@ -1,0 +1,46 @@
+{% load static %}
+<!-- Main Content-->
+{% include "head.html" %}
+<div class="addBlog">
+
+    <form action="sendBlog" method="POST">
+        {% csrf_token %}
+    <div class=" d-flex justify-content-center align-items-center">
+        <div id="blogElements">
+            
+            <p>Items are Centered horizontally and vertically</p> 
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, iusto ipsam. Nemo delenitiaque.
+            </p>
+        
+            <p>Blog Title </p>
+            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="blogTitle" aria-label=".form-control-lg example">
+            <p>Blog Subtitle </p>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Text Area</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="blogSubtitle"></textarea>
+                 
+            
+            </div>
+        </div> 
+        
+    </div>
+
+    <div class="d-flex justify-content-center mb-5 ">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" id="addHeader" onclick="addHeader">Header</button>
+            <button type="button" class="btn btn-secondary" id="addText" onclick="addText">Text</button>
+            <button type="button" class="btn btn-secondary" id="addImage" onclick="addImage">Image</button>
+          </div>
+    </div>
+
+    <div class="d-flex justify-content-center ">
+        <button class="btn btn-primary" type="submit"  >Gönder</button>
+    </div>
+</form>
+</div>
+
+
+
+
+<script src="{% static 'js/createBlog.js'%}"></script>
