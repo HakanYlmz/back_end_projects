@@ -6,7 +6,7 @@ import json
 posts = {
     'data' : [ 
     ],
-    'Statu' : "Quest"
+    "status" : "Quest"
 }
 def getBlogData():
     with open("project/blogsDataset.json", "r+") as file:
@@ -14,6 +14,8 @@ def getBlogData():
         for  i in json_data['blogData']:
             posts['data'].append(i)
         
+
+
 
 
 
