@@ -39,10 +39,10 @@ def login(request):
     return render(request,'loginpage.html')
 
 def about(request):
-    return render(request,'about.html')
+    return render(request,'about.html',posts)
 
 def contact(request):
-    return render(request,'contact.html')
+    return render(request,'contact.html',posts)
 
 def post(request,title):
     jsonData = posts['data']
