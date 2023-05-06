@@ -9,5 +9,6 @@ urlpatterns = [
     path('login',views.login),
     path('contact',views.contact),
     path('about',views.about),
+    #Post için kullandığımız path
     path('post/<str:title>',views.post),
 ]

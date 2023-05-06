@@ -17,13 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.http import HttpResponse
 
-def hello(request):
-    return HttpResponse('fds')
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app.urls')),
-    path('dene',admin.site.urls),
+    #admin paneli olarak djangonun sağladığı panel yerinen kendi oluşturduğu uygulamayı kullanmak istedim
     path('adminApp/',include('adminapp.urls'))
 ]
