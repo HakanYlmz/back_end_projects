@@ -9,7 +9,6 @@ posts = {
     "status" : "Quest"
 }
 def getBlogData():
-    print("burdaaa")
     with open("project/blogsDataset.json", "r+") as file:
         json_data = json.load(file)
         for  i in json_data['blogData']:
@@ -51,9 +50,7 @@ def post(request,title):
     post = {}
     print(posts)
     for i in jsonData:
-        print(i)
         if(title in i['title']):
-            print(i)
             post = i
             break
     postData = {'post' : post}
