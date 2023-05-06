@@ -44,7 +44,12 @@
                 A password is required.
               </div>
             </div>
-           
+          {%if failedLogin%}
+          <div class="alert alert-danger">
+             Wrong password or email . Please try again
+          </div>
+          {%endif%}
+          
           
             <!-- Submit Button-->
             <button

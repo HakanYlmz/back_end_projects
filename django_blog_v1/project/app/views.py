@@ -6,7 +6,8 @@ import json
 posts = {
     'data' : [ 
     ],
-    "status" : "Quest"
+    "status" : "Quest",
+    "failedLogin" : False
 }
 def getBlogData():
     posts['data'] = []
@@ -36,8 +37,14 @@ def login(request):
         for i in json_data['members']:
             if(i['email'] == email and i['password']== password):
                 posts['status'] = "Member"
-                return render(request,'posts.html',posts)           
-    return render(request,'loginpage.html',posts)
+                return render(request,'posts.html',posts)
+            else:
+                posts['failedLogin'] = True  
+                return render(request,'loginpage.html',posts) 
+    else:
+        posts['failedLogin'] = False
+        return render(request,'loginpage.html',posts)         
+    
 
 def about(request):
     return render(request,'about.html',posts)
