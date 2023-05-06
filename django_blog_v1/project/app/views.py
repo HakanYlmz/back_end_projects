@@ -9,11 +9,12 @@ posts = {
     "status" : "Quest"
 }
 def getBlogData():
+    posts['data'] = []
     with open("project/blogsDataset.json", "r+") as file:
         json_data = json.load(file)
         for  i in json_data['blogData']:
             posts['data'].append(i)
-        
+
 
 
 
@@ -34,9 +35,9 @@ def login(request):
         password = request.POST['password']
         for i in json_data['members']:
             if(i['email'] == email and i['password']== password):
-                posts['Statu'] = "Member"
+                posts['status'] = "Member"
                 return render(request,'posts.html',posts)           
-    return render(request,'loginpage.html')
+    return render(request,'loginpage.html',posts)
 
 def about(request):
     return render(request,'about.html',posts)
@@ -47,11 +48,13 @@ def contact(request):
 def post(request,title):
     getBlogData()
     jsonData = posts['data']
+
     post = {}
-    print(posts)
     for i in jsonData:
         if(title in i['title']):
             post = i
+            print(i['blogParts'])
             break
     postData = {'post' : post}
+    
     return render(request,'post.html',postData)

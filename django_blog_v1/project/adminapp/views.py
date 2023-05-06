@@ -14,27 +14,36 @@ titleNum = 1
 def admin(request):
     return render(request,'createBlog.html')
  
-
+blogParts = []
 
 def sendBlog(request):
     if(request.POST):
         blog.update({'startboostrap' : startboostrap})
         blog.update({'posttime' : posttime})
         for key, value in request.POST.items():
-            if("header" in key):
-                addHeader = { "header": value }
-                blog.update(addHeader)
-            if("textArea" in key):
-                addTextArea = { "textArea": value }
-                blog.update(addTextArea)        
+           
             if("blogTitle" in key):
+                print(key)
                 addTitle = { "title": value }
                 blog.update(addTitle)
             if("blogSubtitle" in key):
+                print(key)
                 addSubitle = { "subtitle": value }
                 blog.update(addSubitle)
+            if("header" in key):
+                print(key)
+                addHeader = { "header": value }
+                blogParts.append(addHeader)
+                blog.update(addHeader)
+            if("textArea" in key):
+                print(key)
+                addTextArea = { "textArea": value }
+                blogParts[-1].update(addTextArea)
+                blog.update(addTextArea)        
+            
+           
         
-                
+        blog.update({"blogParts" : blogParts})      
         saveBlogData(blog)
        
     return render(request,'loginpage.html')
