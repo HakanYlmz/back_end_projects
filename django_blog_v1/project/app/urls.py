@@ -9,4 +9,5 @@ urlpatterns = [
     path('login',views.login),
     path('contact',views.contact),
     path('about',views.about),
+    path('post/<str:title>',views.post),
 ]

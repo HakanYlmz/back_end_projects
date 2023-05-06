@@ -14,39 +14,21 @@ titleNum = 1
 def admin(request):
     return render(request,'createBlog.html')
  
-def get_people(request):
-    db = MySQLdb.connect(user='root', db='blog', passwd='aslan076', host='localhost')
-    cursor = db.cursor()
-    cursor.execute('SELECT * FROM persons;')
-    names = [row for row in cursor.fetchall()]
-    print(names[0])
-    print("hjk")
-    db.close()
-    return HttpResponse("get peaople")
+
 
 def sendBlog(request):
-    print("get Blog")
     if(request.POST):
-        print("post")
         blog.update({'startboostrap' : startboostrap})
         blog.update({'posttime' : posttime})
         for key, value in request.POST.items():
             if("header" in key):
-                print(value)
-                print(key)
-                addHeader = { "title": value }
+                addHeader = { "header": value }
                 blog.update(addHeader)
-               
-
             if("textArea" in key):
-                print(value)
-                print(key)
                 addTextArea = { "textArea": value }
-                blog.update(addTextArea)
-                
-
-            if("title" in key):
-                addTitle = { "header": value }
+                blog.update(addTextArea)        
+            if("blogTitle" in key):
+                addTitle = { "title": value }
                 blog.update(addTitle)
             if("blogSubtitle" in key):
                 addSubitle = { "subtitle": value }
@@ -54,8 +36,8 @@ def sendBlog(request):
         
                 
         saveBlogData(blog)
-    print(blog)            
-    return HttpResponse("alindi")
+       
+    return render(request,'loginpage.html')
 
 
 def saveBlogData(blogData):
