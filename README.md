@@ -1,2 +1,2 @@
-# back_end_projects
- flask simple shop
+# My back-end project
+ Using only flask and Django
