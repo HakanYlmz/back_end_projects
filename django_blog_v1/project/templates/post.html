@@ -4,30 +4,29 @@
         <article class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="col-md-10 col-lg-8 col-xl-7 w-75">
+                        <h3 class="section-heading h1">{{post.blogTitle}}  </h3>
+                        <p>{{post.blogSubtitle}}</p>
                         {% for key,value in post.items %}
                         
-                        {% if key == 'title' %}
-                        <h3 class="section-heading h1">{{value}}  </h3>
-                        {%endif%}
-                        {%if key == 'subtitle' %}
-                        <p>{{value}}</p>
-                        {%endif%}
-                        {% endfor %}
-
-                        {% for parts in post.blogParts %}
-                            {% for key,value in parts.items %}
-
-                            {% if key == 'header' %}
+                        {% if 'header' in key %}
                                 <h3 >{{value}}  </h3>
-                            {%endif%}
+                        {%endif%}
+                        
+                        {% if 'textArea' in key %}
+                            <p >{{value}}  </p>
+                        {%endif%}  
 
-                            {% if key == 'textArea' %}
-                                <p >{{value}}  </p>
-                            {%endif%}
-
-                            {% endfor %}
+                        {% if 'Image' in key %}
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkdM1Lkey9AWykVjoOxthhSl1AgI6PY7sycfwhGEab&s" alt=""  >
+                        {%endif%}
+                            
+                       
+                        
                         {% endfor %}
+                        
+                            
+                        
                     </div>
                 </div>
             </div>

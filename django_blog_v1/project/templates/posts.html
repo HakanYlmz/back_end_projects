@@ -7,20 +7,19 @@
       <!-- Template engine kullanılarak postların bilgileri döngü halinde gösterilir -->
         {% for post in data%}
         <div class="post-preview">
-          <a href="post/{{post.title}}">
-            <h2 class="post-title">{{post.title}}</h2>
-            <h3 class="post-subtitle">{{post.subtitle}}</h3>
+          <a href="post/{{post.key}}">
+            <h2 class="post-title">{{post.blogTitle}}</h2>
+            <h3 class="post-preview custom-subtitle">{{post.blogSubtitle}}</h3>
           </a>
-          <p class="post-meta">
-            Posted by
-            <a href="#!">{{post.startboostrap}}</a>
-            {{post.posttime}}
-          </p>
-        </div>
-        <!-- Divider-->
-        <hr class="my-4" />
-      
-
+        <p class="post-meta">
+          Posted by
+          <a href="#!">Start Bootstrap</a>
+          on September 24, 2023
+      </p>
+      </div>
+      </div>
+      <!-- Divider-->
+      <hr class="my-4" />
       {% endfor %}
       <div class="d-flex justify-content-end mb-4">
         <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>

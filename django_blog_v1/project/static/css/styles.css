@@ -10782,6 +10782,9 @@ header.masthead .post-heading .meta a {
   font-weight: 300;
   margin-bottom: 0.625rem;
 }
+
+
+
 .post-preview > .post-meta {
   font-size: 1.125rem;
   font-style: italic;
@@ -10797,12 +10800,4 @@ header.masthead .post-heading .meta a {
   }
 }
 
-.createBlog{
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
-.blogElements{
-  margin: 5%;
-  background-color: red;
-}
+

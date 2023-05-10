@@ -4,6 +4,8 @@ from django.http import HttpResponse
 import MySQLdb
 import json
 from datetime import datetime
+from django.core.files.storage import FileSystemStorage
+import uuid
 
 #Admin panelinde oluturulan default değerler ve yapıların oluşturulması
 blog = {}
@@ -18,36 +20,55 @@ def admin(request):
 
 blogParts = []
 
+denemePart = {}
+
 def sendBlog(request):
     if(request.POST):
+        denemePart.update({"key" : uuid.uuid4()})
+        for key,value in request.POST.items():
+            denemePart.update({key: value})
+        for key,value in request.FILES.items():
+            denemePart.update({key : value.name})
+            handle_uploaded_file(value,value.name)
+
+        print(denemePart)
+        for key,value in denemePart.items():
+            print(key+ " " + value)
+        
+        saveBlogData(denemePart)
+
+        '''
         blog.update({'startboostrap' : startboostrap})
         blog.update({'posttime' : posttime})
         #Blog yapısındaki default değerler atandıktan sonra sözlük yapısın oluşturulur
+        
+        for key , value in request.FILES.items():
+            handle_uploaded_file(value,key)
+
         for key, value in request.POST.items():
            #Blog title ve blogSubtitle her Blog yapısında bir tane oluşur
             if("blogTitle" in key):
-                print(key)
                 addTitle = { "title": value }
                 blog.update(addTitle)
-            if("blogSubtitle" in key):
-                print(key)
+            if("blogSubtitle" in key):     
                 addSubitle = { "subtitle": value }
                 blog.update(addSubitle)
                 #header ve textArea sayıları değişken olmakla beraber header parçalarına text Alanları atanır
-            if("header" in key):
-                print(key)
+            if("header" in key): 
                 addHeader = { "header": value }
                 blogParts.append(addHeader)
                 blog.update(addHeader)
             if("textArea" in key):
-                print(key)
                 addTextArea = { "textArea": value }
                 blogParts[-1].update(addTextArea)
-                blog.update(addTextArea)        
+                blog.update(addTextArea)
+                  
             
            
         blog.update({"blogParts" : blogParts})      
         saveBlogData(blog)
+      '''
+        
        
     return render(request,'loginpage.html')
 
@@ -60,3 +81,8 @@ def saveBlogData(blogData):
         json.dump(json_data, file, indent = 4)
         
 # Create your views here.
+
+def handle_uploaded_file(f,key):
+    fss = FileSystemStorage()
+    file = fss.save(f.name,f)
+

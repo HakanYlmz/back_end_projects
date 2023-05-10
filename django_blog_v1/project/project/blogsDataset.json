@@ -1,22 +1,14 @@
 {
     "blogData": [
         {
-            "startboostrap": "Start Bootstrap",
-            "posttime": "2023-05-06 07:06:35",
-            "title": "Data Visualization",
-            "subtitle": "For visualisation, I exported my final csv file to Power BI and I created a dashboard to better display my findings and communicate the analysis.",
-            "header": "Data Analysis Process",
-            "textArea": "On the 8th of July, I scraped 170,399 Tweets from Twitter using the Python library Tweepy and Twitter\u2019s API. The timeframe for this tweet mining was between the 1st of July 2022 to the 8th of July 2022.\r\n\r\nI collected the user_id, tweets, location, likes and retweets using keywords such as (#rhol, #rholreunion, #rholagos, #realhousewivesoflagos , rhol, rholagos, real housewives of Lagos).",
-            "blogParts": [
-                {
-                    "header": "Use Case",
-                    "textArea": "An analysis like this can be practically used by any company with social media presence to automatically predict customer\u2019s sentiment (i.e. whether their customers are happy or not). The process could be done automatically without having humans manually review thousands of tweets and customer reviews."
-                },
-                {
-                    "header": "Data Analysis Process",
-                    "textArea": "On the 8th of July, I scraped 170,399 Tweets from Twitter using the Python library Tweepy and Twitter\u2019s API. The timeframe for this tweet mining was between the 1st of July 2022 to the 8th of July 2022.\r\n\r\nI collected the user_id, tweets, location, likes and retweets using keywords such as (#rhol, #rholreunion, #rholagos, #realhousewivesoflagos , rhol, rholagos, real housewives of Lagos)."
-                }
-            ]
+            "key": "10b69168-2e93-4157-b920-8c87b80d4f02",
+            "csrfmiddlewaretoken": "0wa3EIFFsxookGJy47Q9CwU9QSJ60Tvzrc1Z4ft0wU3xPXHlStOooJvhJ0lA1dIU",
+            "blogTitle": "What is Lorem Ipsum?",
+            "blogSubtitle": "Subtitle",
+            "header 1": "dene2",
+            "textArea 2": "Time flies, and the next thing I know, I was in my final year of uni. My friends have become disinterested in competitions and have started hunting for internships in order to further hone their skills. Just like them, I was also hunting for internships. I realize that in order for me to find a job, I need something to show in my CV. Competitions are pretty good addition to it, but I wanted my CV to look even more impressive.",
+            "header 4": "dene5",
+            "Image 3": "wall1.jpg"
         }
     ]
 }

@@ -11,13 +11,26 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import environ
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env()
+load_dotenv()
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "yilmaaz076@gmail.com"
+EMAIL_HOST_PASSWORD = "mwyndktvbxqanbgd"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-y@!6bw$7k2l#44q3l=1*^0#e&ebp12d0y)%+gt7gv!n)wc6(@='
@@ -114,6 +127,10 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 

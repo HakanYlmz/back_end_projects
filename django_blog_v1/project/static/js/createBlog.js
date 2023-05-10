@@ -1,6 +1,7 @@
-headerName = 2
-textAreaName = 2
-ImageName = 2
+headerName = 1
+textAreaName = 1
+ImageName = 1
+index = 0
 document.getElementById("addHeader").addEventListener("click", addHeader);
 document.getElementById("addText").addEventListener("click", addText);
 document.getElementById("addImage").addEventListener("click", addImage);
@@ -15,9 +16,9 @@ function addHeader() {
   header.classList.add("form-control");
   header.classList.add("form-control-lg");
   headerName = headerName+ 1
-  console.log(headerName)
-  header.name = "header"+headerName.toString();
-  console.log(headerName)
+  index = index + 1
+  header.name = "header"+" " + index.toString();
+  
   header.type = "text";
   blogElements.appendChild(header);
 
@@ -29,19 +30,23 @@ function addText() {
     Textarea.classList.add("form-control");
     Textarea.classList.add("mb-3");
     textAreaName = textAreaName+ 1
-    Textarea.name = "textArea"+textAreaName.toString();
+    index = index + 1 
+    Textarea.name = "textArea"+" "+index.toString();
+    
     blogElements.appendChild(Textarea);
 }
   
 function addImage() {
-const blogElements = document.getElementById("blogElements");
+  const blogElements = document.getElementById("blogElements");
   const fileInput = document.createElement("input");
   fileInput.classList.add("mb-3");
   fileInput.classList.add("form-control");
   fileInput.type = "file";
   fileInput.accept = "image/png, image/jpeg"
   ImageName = ImageName +1
-  fileInput.name = "ImageName"+ImageName.toString();
+  index = index + 1
+  fileInput.name = "Image"+" "+ index.toString();
+  
   
   blogElements.appendChild(fileInput);
 

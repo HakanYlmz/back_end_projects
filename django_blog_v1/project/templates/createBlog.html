@@ -1,27 +1,27 @@
+{%extends 'base.html'%}
 {% load static %}
 <!-- Main Content-->
 {% include "head.html" %}
+{% block bodycontent %}
 <div class="addBlog">
 
-    <form action="sendBlog" method="POST">
+    <form action="sendBlog" method="POST" enctype="multipart/form-data" >
         {% csrf_token %}
     <div class=" d-flex justify-content-center align-items-center">
         <div id="blogElements">
             
-            <p>Items are Centered horizontally and vertically</p> 
+            <p class="w-150">Adding a blog page</p> 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, iusto ipsam. Nemo delenitiaque.
+                First you need to add a header and summary 
             </p>
-        
+
             <p>Blog Title </p>
-            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="blogTitle" aria-label=".form-control-lg example">
-            <p>Blog Subtitle </p>
+            <input class="form-control form-control-lg" type="text" placeholder="Add Blog title" name="blogTitle" aria-label=".form-control-lg example">
+            <p>Blog Summary </p>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Text Area</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="blogSubtitle"></textarea>
-                 
-            
+                <textarea class="form-control" id="exampleFormControlTextarea1"  placeholder="Every blog needs a summary"  rows="3" name="blogSubtitle"></textarea>
             </div>
+            
         </div> 
         
     </div>
@@ -43,4 +43,5 @@
 
 
 
-<script src="{% static 'js/createBlog.js'%}"></script>
+
+{% endblock %}

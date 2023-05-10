@@ -1,0 +1,17 @@
+.addBlog{
+    margin: 5%;
+     
+}
+#blogElements{
+    width: 50vw;
+}
+.post-subtitle {
+    font-weight: 300;
+    margin-bottom: 0.625rem;
+}
+  
+.custom-subtitle {
+    font-weight: 300;
+    margin-bottom: 0.625rem;
+}
+  
